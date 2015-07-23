@@ -1,5 +1,5 @@
 
-git clone https://github.com/qtproject/qtbase.git
+git clone -b 5.5 https://github.com/qtproject/qtbase.git
 cd qtbase
 
 cp -r ..\win32-msvc2012-static mkspecs\
