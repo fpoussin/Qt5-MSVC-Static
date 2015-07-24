@@ -1,25 +1,37 @@
 @echo off
-setlocal
 
-set BUILDDIR="build"
-set QTVER="5.5"
-set OPENSSL="C:\OpenSSL-Win32"
+set QTVER=5.5
+set QTDIR=%CD%\qtbase-%QTVER%
+set BUILDDIR=%QTDIR%\build
+set PLATFORM=win32-msvc2012
+set OPENSSL=C:\OpenSSL-Win32
+set ICU=%CD%\icu-55.1-vs2012
 
-git clone -b %QTVER% https://github.com/qtproject/qtbase.git qtbase-%QTVER%
-cd qtbase-%QTVER%
+IF exist %QTDIR% (
+    cd %QTDIR%
+    git pull
+) ELSE ( 
+    git clone -b %QTVER% https://github.com/qtproject/qtbase.git %QTDIR%
+    cd %QTDIR%
+)
 
-xcopy /e /c /i /k /y ..\win32-msvc2012-static mkspecs\
+xcopy /e /c /i /k /y %QTDIR%\%PLATFORM% mkspecs\
 
-echo "Cleaning old build dir"
-rd /s /q %BUILDDIR%
+IF exist %BUILDDIR% (
+    echo Cleaning old build dir
+    rd /s /q %BUILDDIR%
+)
 
 md %BUILDDIR%
 cd %BUILDDIR%
-..\configure.exe -prefix C:\Qt\%QTVER%-static -platform win32-msvc2012-static -opensource -release -opengl desktop -mp -static -nomake examples -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -openssl -no-angle -no-accessibility -I %OPENSSL%\include -L %OPENSSL%\lib
+%QTDIR%\configure.bat -prefix C:\Qt\%QTVER%-static -platform %PLATFORM% -opensource -release ^
+-opengl dynamic -mp -static -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre ^
+-no-angle -no-accessibility -nomake examples ^
+-openssl -I %OPENSSL%\include -L %OPENSSL%\lib ^
+-icu -I %ICU%\include -L %ICU%\lib
 
-echo "Configuration complete"
-echo "Will install to C:\Qt\%QTVER%-static"
-echo "Type nmake to build"
-echo "Type nmake install to install"
+echo Configuration complete
+echo Will install to C:\Qt\%QTVER%-static
+echo Type nmake to build
+echo Type nmake install to install
 
-endlocal
