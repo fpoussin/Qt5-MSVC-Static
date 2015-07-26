@@ -35,10 +35,10 @@ Unzip these in the repo
 Open a VS command prompt in the repo's root.
 The link for the prompt is "*VS2015 x86 Native Tools Command Prompt*"
 
-You will need to run *setup.bat* and *build.bat* from the VS command prompt.
+You will need to run *run.bat* from the VS command prompt.
 
-Run *setup.bat*, it will setup and build/install ICU.
-Once this is done, run *build.bat* to start building Qt.
+Run *run.bat setup*, it will setup and build/install ICU, then configure Qt.
+Once this is done, run *run.bat build* to start building Qt.
 
 **Configuration**
 

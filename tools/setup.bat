@@ -50,7 +50,6 @@ IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Configuration complete
 echo Will install to %QTINSTALLDIR%
-echo call build.bat to build and install
 
 endlocal
 
