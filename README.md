@@ -14,7 +14,7 @@ This tools copies a modified mkspec config in the qtbase repo to build a static 
  - Perl (http://strawberryperl.com/)
  - Ruby (http://rubyinstaller.org/downloads/)
  - MSYS Git (https://msysgit.github.io/)
- - OpenSSL (http://slproweb.com/download/Win32OpenSSL-1_0_2d.exe)
+ - OpenSSL (https://www.openssl.org/source/openssl-1.0.2d.tar.gz)
  - ICU (http://download.icu-project.org/files/icu4c/55.1/icu4c-55_1-src.zip)
 
 Make sure *Python*, *Perl* and *Git (MSYS)* are all in the *PATH*.
@@ -29,16 +29,20 @@ First we need to download and install the dependencies and Qt.
 Qt: 
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qtbase-opensource-src-5.5.0.zip
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qt5-opensource-src-5.5.0.zip
+ - https://www.openssl.org/source/openssl-1.0.2d.tar.gz
+ - http://download.icu-project.org/files/icu4c/55.1/icu4c-55_1-src.zip
 
-Unzip these in the repo
+Unzip these in the repo, check the folder names in tools/options.bat
 
 Open a VS command prompt in the repo's root.
 The link for the prompt is "*VS2015 x86 Native Tools Command Prompt*"
 
 You will need to run *run.bat* from the VS command prompt.
 
-Run *run.bat setup*, it will setup and build/install ICU, then configure Qt.
-Once this is done, run *run.bat build* to start building Qt.
+Run these commands in the following order to build Qt:
+ - run.bat build-deps
+ - run.bat setup-qt
+ - run.bat build-qt
 
 **Configuration**
 
