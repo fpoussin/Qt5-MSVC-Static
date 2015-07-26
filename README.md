@@ -8,6 +8,8 @@ This tools copies a modified mkspec config in the qtbase repo to build a static 
 
 **Dependencies**
 
+ - MSVC 2015 with WDK 8.1 (Community works fine)
+ - Qt 5.5.0+ sources (untested with previous versions, might work from 5.4.0)
  - Python 2.7 (https://www.python.org/downloads/windows/)
  - Perl (http://strawberryperl.com/)
  - Ruby (http://rubyinstaller.org/downloads/)
@@ -28,12 +30,15 @@ Qt:
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qtbase-opensource-src-5.5.0.zip
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qt5-opensource-src-5.5.0.zip
 
-Unzip these in the repo as qtbase-versioon
+Unzip these in the repo
 
-You will need to run *setup.bat* from the VS command tool.
-You can copy the VC command tool link in the directory and launch it from here.
+Open a VS command prompt in the repo's root.
+The link for the prompt is "*VS2015 x86 Native Tools Command Prompt*"
 
-Run *setup.bat*, then *build.bat* if everything goes fine.
+You will need to run *setup.bat* and *build.bat* from the VS command prompt.
+
+Run *setup.bat*, it will setup and build/install ICU.
+Once this is done, run *build.bat* to start building Qt.
 
 **Configuration**
 
@@ -43,7 +48,7 @@ You can add the debug libs or use the official sdk libs for debugging.
 By default I only enabled a rather restricted set of modules.
 Here is the config output:
 
-    QMAKESPEC...................win32-msvc2012 (commandline)
+    QMAKESPEC...................win32-msvc2015 (commandline)
     Architecture................i386, features: sse sse2
     Host Architecture...........i386, features: sse sse2
     Maketool....................nmake
