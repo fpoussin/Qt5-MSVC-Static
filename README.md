@@ -2,10 +2,6 @@
 
 Set of tools to build Qt5 static libs on Windows.
 
-**Description**
-
-This tools copies a modified mkspec config in the qtbase repo to build a static library.
-
 **Dependencies**
 
  - MSVC 2015 with WDK 8.1 (Community works fine)
@@ -13,9 +9,9 @@ This tools copies a modified mkspec config in the qtbase repo to build a static 
  - Python 2.7 (https://www.python.org/downloads/windows/)
  - Perl (http://strawberryperl.com/)
  - Ruby (http://rubyinstaller.org/downloads/)
- - MSYS Git (https://msysgit.github.io/)
- - OpenSSL (https://www.openssl.org/source/openssl-1.0.2d.tar.gz)
- - ICU (http://download.icu-project.org/files/icu4c/55.1/icu4c-55_1-src.zip)
+ - MSYS Git (https://msysgit.github.io)
+ - OpenSSL 1.0.2d
+ - ICU 55.1
 
 Make sure *Python*, *Perl* and *Git (MSYS)* are all in the *PATH*.
 
@@ -25,17 +21,17 @@ http://doc.qt.io/qt-5/windows-building.html
 
 **Usage**
 
-First we need to download and install the dependencies and Qt.
+First we need to download and extract the dependencies and Qt.
 Qt: 
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qtbase-opensource-src-5.5.0.zip
  - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qt5-opensource-src-5.5.0.zip
  - https://www.openssl.org/source/openssl-1.0.2d.tar.gz
  - http://download.icu-project.org/files/icu4c/55.1/icu4c-55_1-src.zip
 
-Unzip these in the repo, check the folder names in tools/options.bat
+Extract these in the repo, check the folder names are correct in *tools/options.bat*
 
-Open a VS command prompt in the repo's root.
-The link for the prompt is "*VS2015 x86 Native Tools Command Prompt*"
+Open a VS command prompt in the repo's root.  
+The link for the prompt is "*VS2015 x86 Native Tools Command Prompt.lnk*"
 
 You will need to run *run.bat* from the VS command prompt.
 
