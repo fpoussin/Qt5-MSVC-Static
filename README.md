@@ -40,6 +40,16 @@ Run these commands in the following order to build Qt:
  - run.bat setup-qt
  - run.bat build-qt
 
+**Additional Qt modules**
+
+If you want to install extra Qt modules like qtscript or webkit:
+- Download the archives and extract them in the repo. 
+- Run this command: *run.bat build-extra [module-name]*
+- You need to run it once per module
+
+You obviously need to do that after installing Qt.
+Modules can be found here: http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/
+
 **Configuration**
 
 Only release libs are enabled by default. 

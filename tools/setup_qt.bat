@@ -35,7 +35,7 @@ IF exist %QTBUILDDIR% (
 )
 
 md %QTBUILDDIR%
-cd %QTBUILDDIR%
+cd %QTBUILDDIR%  ||  exit /b %errorlevel%
 
 echo Configuring Qt...
 start /W /BELOWNORMAL %QTDIR%\configure.exe -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -no-angle -no-accessibility -nomake examples -openssl -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -icu -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib

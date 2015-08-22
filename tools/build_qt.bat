@@ -3,7 +3,7 @@ setlocal
 
 call tools\options.bat
 
-cd %QTBUILDDIR%
+cd %QTBUILDDIR% ||  exit /b %errorlevel%
 
 echo Building Qt...
 start /W /BELOWNORMAL "Building Qt..." nmake

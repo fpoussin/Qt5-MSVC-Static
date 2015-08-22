@@ -13,12 +13,17 @@ IF NOT "%1"=="" (
         call tools\build_icu.bat
         call tools\build_openssl.bat
     )
+    IF "%1"=="build-extra" (
+        set EXTNAME=%2
+        call tools\build_qt_extras.bat
+    )
 
 ) ELSE (
     echo Available commands:
-    echo build-deps : Build all dependencies for Qt
-    echo setup-qt : build ICU and Setup Qt
+    echo build-deps : Build all dependencies for Qt ^(ICU, OpenSSL^)
+    echo setup-qt : Setup Qt
     echo build-qt : build Qt
+    echo build-extra [name]: build qt extension (you need to specify the name)
 )
 
 endlocal
