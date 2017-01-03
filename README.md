@@ -5,15 +5,14 @@ Set of tools to build Qt5 static libs on Windows.
 **Dependencies**
 
  - MSVC 2015 with WDK 8.1 (Community works fine)
- - Qt 5.5.0+ sources (untested with previous versions, might work from 5.4.0)
- - Python 2.7 (https://www.python.org/downloads/windows/)
- - Perl (http://strawberryperl.com/)
- - Ruby (http://rubyinstaller.org/downloads/)
- - MSYS Git (https://msysgit.github.io)
- - OpenSSL 1.0.2d
- - ICU 55.1
+ - Qt 5.7.1+ sources (untested with previous versions, might work from 5.0)
+ - Python 2.7 (https://www.python.org/downloads/windows/) (for Qt)
+ - Perl (http://strawberryperl.com/) (for OpenSSL)
+ - MSYS2
+ - OpenSSL 1.1.0+
+ - ICU 58.1+
 
-Make sure *Python*, *Perl* and *Git (MSYS)* are all in the *PATH*.
+Make sure *Python*, *Perl* are all in the *PATH*.
 
 You can check the official documentation here: 
 http://doc.qt.io/qt-5/windows-requirements.html
@@ -23,10 +22,10 @@ http://doc.qt.io/qt-5/windows-building.html
 
 First we need to download and extract the dependencies and Qt.
 Qt: 
- - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qtbase-opensource-src-5.5.0.zip
- - http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/qt5-opensource-src-5.5.0.zip
- - https://www.openssl.org/source/openssl-1.0.2d.tar.gz
- - http://download.icu-project.org/files/icu4c/55.1/icu4c-55_1-src.zip
+ - http://download.qt.io/official_releases/qt/5.7/5.7.1/submodules/qtbase-opensource-src-5.7.1.zip
+ - http://download.qt.io/official_releases/qt/5.7/5.7.1/submodules/qtwinextras-opensource-src-5.7.1.zip
+ - https://www.openssl.org/source/openssl-1.0.2h.tar.gz
+ - http://download.icu-project.org/files/icu4c/57.1/icu4c-57_1-src.zip
 
 Extract these in the repo, check the folder names are correct in *tools/options.bat*
 
@@ -48,7 +47,7 @@ If you want to install extra Qt modules like qtscript or webkit:
 - You need to run it once per module
 
 You obviously need to do that after installing Qt.
-Modules can be found here: http://download.qt.io/official_releases/qt/5.5/5.5.0/submodules/
+Modules can be found here: http://download.qt.io/official_releases/qt/5.7/5.7.1/submodules/
 
 **Configuration**
 

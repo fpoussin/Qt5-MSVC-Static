@@ -1,8 +1,6 @@
 @echo off
 setlocal
 
-call tools\options.bat
-
 cd %QTBUILDDIR% ||  exit /b %errorlevel%
 
 echo Building Qt...

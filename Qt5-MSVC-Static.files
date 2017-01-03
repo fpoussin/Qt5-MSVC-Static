@@ -1,0 +1,19 @@
+LICENSE
+README.md
+VS2015 x86 Native Tools Command Prompt.lnk
+qt.bat
+tools/build_icu.bat
+tools/build_openssl.bat
+tools/build_qt.bat
+tools/build_qt_extras.bat
+tools/gnuwin32/bin/data/glr.c
+tools/gnuwin32/bin/data/glr.cc
+tools/gnuwin32/bin/data/lalr1.cc
+tools/gnuwin32/bin/data/location.cc
+tools/gnuwin32/bin/data/stack.hh
+tools/gnuwin32/bin/data/variant.hh
+tools/gnuwin32/bin/data/yacc.c
+tools/msvc-desktop.conf
+tools/options.bat
+tools/setup_icu.sh
+tools/setup_qt.bat

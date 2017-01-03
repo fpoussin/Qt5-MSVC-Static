@@ -1,8 +1,6 @@
 @echo off
 setlocal
 
-call tools\options.bat
-
 set EXTPATH=%STARTDIR%\%EXTNAME%-opensource-src-%QTVER%
 set QMAKE=%QTINSTALLDIR%\bin\qmake.exe
 

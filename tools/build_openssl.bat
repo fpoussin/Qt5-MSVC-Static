@@ -1,8 +1,6 @@
 @echo off
 setlocal
 
-call tools\options.bat
-
 echo Configuring OpenSSL...
 IF exist %SSLINSTALLDIR% (
     echo OpenSSL already installed!
@@ -11,15 +9,18 @@ IF exist %SSLINSTALLDIR% (
     IF exist %SSLBUILDDIR% (
 
         cd %SSLBUILDDIR%
-        start /W /BELOWNORMAL "Configuring OpenSSL - 1..." perl Configure VC-WIN32 no-asm enable-static-engine --prefix=%SSLINSTALLDIR%
-        start /W /BELOWNORMAL "Configuring OpenSSL - 2..." ms\do_nt ^&^& exit
+        rd build /s /q
+        md build
+        cd build
+
+        start /W /BELOWNORMAL "Configuring OpenSSL..." perl ..\Configure VC-WIN32 no-asm enable-static-engine no-shared --prefix=%SSLINSTALLDIR%
         
         echo Building OpenSSL...
-        start /W /BELOWNORMAL "Building OpenSSL..." nmake -f ms\nt.mak clean all
+        start /W /BELOWNORMAL "Building OpenSSL..." nmake clean all
         IF %errorlevel% NEQ 0 exit /b %errorlevel%
         
         echo Installing OpenSSL...
-        start /W /BELOWNORMAL "Installing OpenSSL..." nmake -f ms\nt.mak install
+        start /W /BELOWNORMAL "Installing OpenSSL..." nmake install
         IF %errorlevel% NEQ 0 exit /b %errorlevel%
         
     ) ELSE (

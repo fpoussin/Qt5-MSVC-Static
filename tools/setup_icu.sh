@@ -15,4 +15,4 @@ ICU_UNIX=$(echo $ICUINSTALLDIR | sed 's|\\|/|g')
 echo "CPP=$CPP CC=$CC CXX=$CXX CPPFLAGS=$CPPFLAGS CFLAGS=$CFLAGS CXXFLAGS=$CXXFLAGS LDFLAGS=$LDFLAGS MAKE=$MAKE"
 echo "Install path: $ICU_UNIX"
 
-../source/configure -prefix=$ICU_UNIX --enable-static --disable-shared 
+bash ../source/configure -prefix=$ICU_UNIX --enable-static --disable-shared

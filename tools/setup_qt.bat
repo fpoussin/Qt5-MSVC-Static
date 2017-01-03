@@ -1,8 +1,6 @@
 @echo off
 setlocal
 
-call tools\options.bat
-
 IF exist %ICUINSTALLDIR% (
     echo Found ICU
 ) ELSE (
@@ -26,8 +24,11 @@ IF exist %QTDIR% (
     exit /b 1
 )
 
-echo Copying updated mkspecs
-xcopy /c /k /y %STARTDIR%\tools\msvc-desktop.conf %QTDIR%\mkspecs\common\msvc-desktop.conf
+IF NOT exist %QTDIR%\mkspecs\common\msvc-desktop.conf.bkp (
+    echo Copying updated mkspecs for static build
+    copy /B %QTDIR%\mkspecs\common\msvc-desktop.conf %QTDIR%\mkspecs\common\msvc-desktop.conf.bkp
+    copy /B /Y %STARTDIR%\tools\msvc-desktop.conf %QTDIR%\mkspecs\common\msvc-desktop.conf
+)
 
 IF exist %QTBUILDDIR% (
     echo Cleaning old Qt build dir
@@ -38,7 +39,7 @@ md %QTBUILDDIR%
 cd %QTBUILDDIR%  ||  exit /b %errorlevel%
 
 echo Configuring Qt...
-start /W /BELOWNORMAL %QTDIR%\configure.exe -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -no-angle -no-accessibility -nomake examples -openssl -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -icu -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib
+start /W /BELOWNORMAL "Configuring Qt..." %QTDIR%\configure.bat -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -no-shared -ltcg -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -no-angle -no-accessibility -nomake examples -openssl-linked -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -icu -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Configuration complete
