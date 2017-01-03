@@ -30,7 +30,6 @@ IF exist %ICUINSTALLDIR% (
 
         echo Could not find ICU sources in %ICUBUILDDIR%
         exit /b 1
-        
     )
 )
 
