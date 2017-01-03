@@ -4,7 +4,7 @@ setlocal
 cd %QTBUILDDIR% ||  exit /b %errorlevel%
 
 echo Building Qt...
-start /W /BELOWNORMAL "Building Qt..." nmake
+start /W /BELOWNORMAL "Building Qt..." jom
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Installing Qt...

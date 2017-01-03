@@ -17,5 +17,5 @@ set QTBUILDDIR=%QTDIR%\build
 
 set PLATFORM=win32-msvc2015
 
-set PATH=%PATH%;%STARTDIR%\tools\gnuwin32\bin;C:\msys64\usr\bin
+set PATH=%PATH%;%STARTDIR%\tools\gnuwin32\bin;%STARTDIR%\tools\jom;C:\msys64\usr\bin
 
