@@ -9,25 +9,22 @@ IF exist %SSLINSTALLDIR% (
     IF exist %SSLBUILDDIR% (
 
         cd %SSLBUILDDIR%
-        rd build /s /q
-        md build
-        cd build
 
-        start /W /BELOWNORMAL "Configuring OpenSSL..." perl ..\Configure VC-WIN32 no-asm enable-static-engine no-shared --prefix=%SSLINSTALLDIR%
+        start /W /BELOWNORMAL "Configuring OpenSSL..." perl Configure VC-WIN32 no-asm enable-static-engine --prefix=%SSLINSTALLDIR%
+        start /W /BELOWNORMAL "Configuring OpenSSL - 2..." ms\do_nt ^&^& exit
         
         echo Building OpenSSL...
-        start /W /BELOWNORMAL "Building OpenSSL..." nmake clean all
+        start /W /BELOWNORMAL "Building OpenSSL..." nmake -f ms\nt.mak clean all
         IF %errorlevel% NEQ 0 exit /b %errorlevel%
-        
+
         echo Installing OpenSSL...
-        start /W /BELOWNORMAL "Installing OpenSSL..." nmake install
+        start /W /BELOWNORMAL "Installing OpenSSL..." nmake -f ms\nt.mak install
         IF %errorlevel% NEQ 0 exit /b %errorlevel%
         
     ) ELSE (
 
         echo Could not find OpenSSL sources in %SSLBUILDDIR%
         exit /b 1
-        
     )
 )
 

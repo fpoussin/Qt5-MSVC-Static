@@ -39,7 +39,7 @@ md %QTBUILDDIR%
 cd %QTBUILDDIR%  ||  exit /b %errorlevel%
 
 echo Configuring Qt...
-start /W /BELOWNORMAL "Configuring Qt..." %QTDIR%\configure.bat -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -no-shared -ltcg -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -angle -no-accessibility -nomake examples -openssl-linked -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib
+start /W /BELOWNORMAL "Configuring Qt..." %QTDIR%\configure.bat -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -no-shared -ltcg -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -angle -no-accessibility -nomake examples -openssl-linked -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib ^&^& exit
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Configuration complete

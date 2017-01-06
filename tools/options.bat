@@ -7,7 +7,7 @@ set BUILDDIR=%CD%\build
 set ICUBUILDDIR=%SRCDIR%\icu-58.2
 set ICUINSTALLDIR=%BUILDDIR%\icu
 
-set SSLBUILDDIR=%SRCDIR%\openssl-1.1.0c
+set SSLBUILDDIR=%SRCDIR%\openssl-1.0.2j
 set SSLINSTALLDIR=%BUILDDIR%\openssl
 
 set QTVER=5.8.0-rc

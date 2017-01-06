@@ -4,6 +4,7 @@ VS2015 x86 Native Tools Command Prompt.lnk
 qt.bat
 tools/build_icu.bat
 tools/build_openssl.bat
+tools/build_openssl_1.1.x.bat
 tools/build_qt.bat
 tools/build_qt_extras.bat
 tools/gnuwin32/bin/data/glr.c
