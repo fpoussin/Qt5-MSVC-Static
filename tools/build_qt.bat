@@ -8,7 +8,7 @@ start /W /BELOWNORMAL "Building Qt..." jom
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Installing Qt...
-start /W /BELOWNORMAL "Installing Qt..." nmake install
+start /W /BELOWNORMAL "Installing Qt..." jom install
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Qt sucessfully installed

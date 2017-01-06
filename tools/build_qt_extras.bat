@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-set EXTPATH=%STARTDIR%\%EXTNAME%-opensource-src-%QTVER%
+set EXTPATH=%SRCDIR%\%EXTNAME%-opensource-src-%QTVER%
 set QMAKE=%QTINSTALLDIR%\bin\qmake.exe
 
 IF NOT "%EXTNAME%"=="" (
