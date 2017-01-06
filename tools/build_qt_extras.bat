@@ -16,11 +16,11 @@ IF NOT "%EXTNAME%"=="" (
     IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
     echo Building %EXTNAME%...
-    start /W /BELOWNORMAL "Building Qt..." nmake clean all
+    start /W /BELOWNORMAL "Building %EXTNAME%..." jom clean all
     IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
     echo Installing %EXTNAME%...
-    start /W /BELOWNORMAL "Installing Qt..." nmake install
+    start /W /BELOWNORMAL "Installing %EXTNAME%..." jom install
     IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
     echo %EXTNAME% installed
