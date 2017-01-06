@@ -29,7 +29,7 @@ IF NOT "%1"=="" (
 ) ELSE (
     echo Available commands:
     echo deps : Build all dependencies for Qt ^(ICU, OpenSSL^)
-    echo icu : Build icu (Optional)
+    echo icu : Build icu ^(Optional^)
     echo openssl : Build OpenSSL
     echo setup : Setup Qt
     echo build : build Qt
