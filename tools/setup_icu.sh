@@ -9,6 +9,7 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CFLAGS
 export LDFLAGS="-NOLOGO -DYNAMICBASE -NXCOMPAT -OPT:ICF -OPT:REF -LTCG"
 export MAKE="nmake"
+export PATH=$UNIXPATH
 
 ICU_UNIX=$(echo $ICUINSTALLDIR | sed 's|\\|/|g')
 

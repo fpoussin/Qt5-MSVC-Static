@@ -1,6 +1,8 @@
 @echo off
 setlocal
 
+set PATH=%UNIXPATH%
+
 IF exist %ICUINSTALLDIR% (
     echo ICU already installed!
     echo Delete or rename %ICUINSTALLDIR% if you want to rebuild it.
