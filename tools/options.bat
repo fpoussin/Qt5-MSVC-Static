@@ -4,7 +4,7 @@ set STARTDIR=%CD%
 set SRCDIR=%CD%\sources
 set BUILDDIR=%CD%\build
 
-set QTVER=5.8.0-rc
+set QTVER=5.8.0
 set QTDIR=%SRCDIR%\qtbase-opensource-src-%QTVER%
 set QTINSTALLDIR=C:\Qt\%QTVER%-static
 set QTBUILDDIR=%QTDIR%\build
