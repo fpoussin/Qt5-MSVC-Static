@@ -5,6 +5,9 @@ call tools\options.bat
 
 IF NOT "%1"=="" (
 
+    IF "%1"=="download" (
+        call tools\download.bat
+    )
     IF "%1"=="setup" (
         call tools\setup_qt.bat
     )
@@ -28,6 +31,7 @@ IF NOT "%1"=="" (
 
 ) ELSE (
     echo Available commands:
+    echo download: Download required sources
     echo deps : Build all dependencies for Qt ^(ICU, OpenSSL^)
     echo icu : Build icu ^(Optional^)
     echo openssl : Build OpenSSL
