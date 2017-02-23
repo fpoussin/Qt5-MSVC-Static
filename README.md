@@ -5,36 +5,30 @@ Set of tools to build Qt5 static libs on Windows.
 **Dependencies**
 
  - MSVC 2015 with WDK 8.1 (Community edition works fine)
- - Qt 5.8.0+ sources (untested with previous versions, might work from 5.0)
+ - Qt 5.5.0+ sources (untested with previous versions, might work from 5.0)
  - Python 2.7 (https://www.python.org/downloads/windows/) (for Qt)
  - Perl (http://strawberryperl.com/) (for OpenSSL)
- - MSYS2
+ - MSYS2 (for ICU, optional)
  - OpenSSL 1.0.x (not 1.1.x)
  - ICU 57.x+
 
 Make sure *Python*, *Perl* are all in the *PATH* or add them to *PATH* in options.bat
 
-You can check the official documentation here: 
-http://doc.qt.io/qt-5/windows-requirements.html
-http://doc.qt.io/qt-5/windows-building.html
+You can check the official documentation here:  
+http://doc.qt.io/qt-5/windows-requirements.html  
+http://doc.qt.io/qt-5/windows-building.html  
 
 **Usage**
 
-First we need to download and extract the dependencies and Qt.
-Qt: 
- - http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtbase-opensource-src-5.8.0.zip
- - http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/qtwinextras-opensource-src-5.8.0.zip
- - https://www.openssl.org/source/openssl-1.0.2j.tar.gz
- - http://download.icu-project.org/files/icu4c/58.2/icu4c-58_2-src.zip
-
-Extract these in the repo, check the folder names are correct in *tools/options.bat*
+First, we need to check the folder names are correct in *tools/options.bat*  
 
 Open a VS command prompt in the repo's root.  
 The link for the prompt is "*VS2015 x86 Native Tools Command Prompt.lnk*"
 
-You will need to run *run.bat* from the VS command prompt.
+You will need to run *qt.bat* from the VS command prompt.
 
 Run these commands in the following order to build Qt:
+ - qt download
  - qt openssl
  - qt icu (optional)
  - qt setup
@@ -42,12 +36,12 @@ Run these commands in the following order to build Qt:
 
 **Additional Qt modules**
 
+Those can be downloaded and installed by the script.  
 If you want to install extra Qt modules like qtscript or webkit:
-- Download the archives and extract them in the repo. 
 - Run this command: *qt extra [module-name]*
 - You need to run it once per module
 
-You obviously need to do that after installing Qt.
+You obviously have to do that after installing Qt.
 Modules can be found here: http://download.qt.io/official_releases/qt/5.8/5.8.0/submodules/
 
 **Configuration**
