@@ -31,13 +31,13 @@ IF NOT "%1"=="" (
 
 ) ELSE (
     echo Available commands:
-    echo download: Download required sources
+    echo download: Download and extracts required sources
     echo deps : Build all dependencies for Qt ^(ICU, OpenSSL^)
     echo icu : Build icu ^(Optional^)
     echo openssl : Build OpenSSL
     echo setup : Setup Qt
     echo build : build Qt
-    echo extra [name]: build qt extension ^(you need to specify the name^)
+    echo extra [name]: Download and build qt extension ^(you need to specify the name^)
 )
 
 endlocal
