@@ -7,6 +7,7 @@ tools/build_openssl.bat
 tools/build_openssl_1.1.x.bat
 tools/build_qt.bat
 tools/build_qt_extras.bat
+tools/download.bat
 tools/gnuwin32/bin/data/glr.c
 tools/gnuwin32/bin/data/glr.cc
 tools/gnuwin32/bin/data/lalr1.cc

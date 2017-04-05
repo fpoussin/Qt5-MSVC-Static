@@ -5,15 +5,15 @@ IF exist %ICUINSTALLDIR% (
     echo Found ICU
 ) ELSE (
     echo Could not find ICU in %ICUINSTALLDIR%
-    echo use "run.bat build-deps" to install it
-    exit /b 1
+    echo use "qt.bat icu" to install it. Continuing without it...
+    pause
 )
 
 IF exist %SSLINSTALLDIR% (
     echo Found OpenSSL
 ) ELSE (
     echo Could not find OpenSSL in %SSLINSTALLDIR%
-    echo use "run.bat build-deps" to install it
+    echo use "qt.bat openssl" to install it.
     exit /b 1
 )
 
