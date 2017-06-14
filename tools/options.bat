@@ -5,7 +5,7 @@ set SRCDIR=%CD%\sources
 set BUILDDIR=%CD%\build
 
 set PLATFORM=win32-msvc2017
-set QTVER=5.9.0-beta
+set QTVER=5.9.0
 set ICUVER=58.2
 set SSLVER=1.0.2k
 
