@@ -5,17 +5,17 @@ set SRCDIR=%CD%\sources
 set BUILDDIR=%CD%\build
 
 set PLATFORM=win32-msvc2017
-set QTVER=5.9.0
-set ICUVER=58.2
-set SSLVER=1.0.2k
+set QTVER=5.10.0
+set ICUVER=60.1
+set SSLVER=1.1.0g
 
 set QTINSTALLDIR=C:\Qt\%QTVER%-static
 
 set QTRELEASE=official
 for %%A in (alpha beta rc) DO (echo.%QTVER% | find /I "%%A">Nul && set QTRELEASE=development)
 
-set QTURL=http://download.qt.io/%QTRELEASE%_releases/qt/%QTVER:~0,3%/%QTVER%/submodules/qtbase-opensource-src-%QTVER%.zip
-set QTDIR=%SRCDIR%\qtbase-opensource-src-%QTVER%
+set QTURL=http://download.qt.io/%QTRELEASE%_releases/qt/%QTVER:~0,-2%/%QTVER%/submodules/qtbase-everywhere-src-%QTVER%.zip
+set QTDIR=%SRCDIR%\qtbase-everywhere-src-%QTVER%
 set QTBUILDDIR=%QTDIR%\build
 
 call set ICUVER_UNDERSCORE=%%ICUVER:.=_%%
