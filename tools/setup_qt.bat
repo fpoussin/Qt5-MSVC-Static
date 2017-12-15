@@ -1,14 +1,6 @@
 @echo off
 setlocal
 
-IF exist %ICUINSTALLDIR% (
-    echo Found ICU
-) ELSE (
-    echo Could not find ICU in %ICUINSTALLDIR%
-    echo use "qt.bat icu" to install it. Continuing without it...
-    pause
-)
-
 IF exist %SSLINSTALLDIR% (
     echo Found OpenSSL
 ) ELSE (
@@ -39,7 +31,7 @@ md %QTBUILDDIR%
 cd %QTBUILDDIR%  ||  exit /b %errorlevel%
 
 echo Configuring Qt...
-start /W /BELOWNORMAL "Configuring Qt..." %QTDIR%\configure.bat -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -no-shared -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -angle -nomake examples -openssl-linked -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib -I %ICUINSTALLDIR%\include -L %ICUINSTALLDIR%\lib ^&^& exit
+start /W /BELOWNORMAL "Configuring Qt..." %QTDIR%\configure.bat -prefix %QTINSTALLDIR% -platform %PLATFORM% -opensource -release -confirm-license -opengl dynamic -mp -static -static-runtime -no-shared -qt-libpng -qt-libjpeg -qt-zlib -qt-pcre -angle -nomake examples -openssl-linked -I %SSLINSTALLDIR%\include -L %SSLINSTALLDIR%\lib ^&^& exit
 IF %errorlevel% NEQ 0 exit /b %errorlevel%
 
 echo Configuration complete
