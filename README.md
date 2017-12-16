@@ -45,7 +45,7 @@ Modules can be found here: http://download.qt.io/official_releases/qt/5.10/5.10.
 
 Only release libs are enabled by default. 
 You can add the debug libs or use the official sdk libs for debugging.
-You can add extra build options by editing the *EXTRABUILDOPTIONS* var in options.bat
+You can add extra build options for Qt by editing the *EXTRABUILDOPTIONS* var in options.bat
 
 
 You can check the official configuration guide here:

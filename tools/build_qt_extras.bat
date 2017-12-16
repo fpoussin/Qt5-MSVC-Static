@@ -14,6 +14,8 @@ IF NOT "%EXTNAME%" == "" (
     cd %SRCDIR%
     echo Downloading !URL!
     curl %CURLOPTS% !URL!
+
+    rd %EXTPATH% /s /q
     7z %ZOPTS% %EXTNAME%-everywhere-src-%QTVER%.zip || exit /b %errorlevel%
     cd ..
 
