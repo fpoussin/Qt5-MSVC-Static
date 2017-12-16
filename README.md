@@ -8,7 +8,6 @@ Set of tools to build Qt5 static libs on Windows.
  - Qt 5.8.0+ sources (Works with previous version with minor edits)
  - Python 2.7 (https://www.python.org/downloads/windows/) (for Qt)
  - Perl (http://strawberryperl.com/) (for OpenSSL)
- - MSYS2 (for ICU, optional)
  - OpenSSL 1.0.x
 
 Make sure *Python*, *Perl* are all in the *PATH* or add them to *PATH* in options.bat

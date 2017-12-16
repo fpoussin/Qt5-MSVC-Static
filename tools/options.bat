@@ -6,9 +6,8 @@ set QTVER=5.10.0
 set ICUVER=60.1
 set SSLVER=1.0.2n
 set PREFIX=C:\Qt
-set EXTRABUILDOPTIONS=
-set PATH=C:Python27\;C:\Strawberry\perl\bin;%STARTDIR%\tools\gnuwin32\bin;%STARTDIR%\tools\jom;%PATH%
-set UNIXPATH=C:\msys64\usr\bin;%PATH%
+set EXTRABUILDOPTIONS=-qt-sqlite
+set PATH=C:Python27\;C:\Strawberry\perl\bin;%PATH%
 
 
 REM DO NOT EDIT BELOW THIS LINE
@@ -31,3 +30,4 @@ set SSLINSTALLDIR=%QTINSTALLDIR%\openssl
 
 set CURLOPTS=-L -C - -O
 set ZOPTS=x -aos -y
+set PATH=%STARTDIR%\tools\gnuwin32\bin;%STARTDIR%\tools\jom;%PATH%
