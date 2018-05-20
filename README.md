@@ -39,7 +39,7 @@ If you want to install extra Qt modules like qtscript or webkit:
 - You need to run it once per module
 
 You obviously have to do that after installing Qt.
-Modules can be found here: http://download.qt.io/official_releases/qt/5.10/5.10.0/submodules/
+Modules can be found here: http://download.qt.io/official_releases/qt/5.10/5.10.1/submodules/
 
 **Configuration**
 
