@@ -2,11 +2,11 @@
 
 
 set MSVCVER=2017
-set QTVER=5.10.0
-set SSLVER=1.0.2n
+set QTVER=5.10.1
+set SSLVER=1.0.2o
 set PREFIX=C:\Qt
 set EXTRABUILDOPTIONS=-qt-sqlite
-set PATH=C:Python27\;C:\Strawberry\perl\bin;%PATH%
+set PATH=C:\Python27\;C:\Strawberry\perl\bin;%PATH%
 
 
 REM DO NOT EDIT BELOW THIS LINE
