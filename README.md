@@ -2,7 +2,7 @@
 
 Set of tools to build Qt5 static libs on Windows.
 
-**Dependencies**
+## Dependencies
 
  - MSVC 2013-2017 with WDK 8.1/10+ (Community edition works fine)
  - Qt 5.8.0+ sources (Works with previous version with minor edits)
@@ -16,7 +16,7 @@ You can check the official documentation here:
 http://doc.qt.io/qt-5/windows-requirements.html  
 http://doc.qt.io/qt-5/windows-building.html  
 
-**Usage**
+## Usage
 
 First, we need to check the folder names are correct in *tools/options.bat*  
 
@@ -31,7 +31,7 @@ Run these commands in the following order to build Qt:
  - qt setup
  - qt build
 
-**Additional Qt modules**
+## Additional Qt modules
 
 Those can be downloaded and installed by the script.  
 If you want to install extra Qt modules like qtscript or webkit:
@@ -41,7 +41,7 @@ If you want to install extra Qt modules like qtscript or webkit:
 You obviously have to do that after installing Qt.
 Modules can be found here: http://download.qt.io/official_releases/qt/5.12/5.12.1/submodules/
 
-**Configuration**
+## Configuration
 
 Only release libs are enabled by default. 
 You can add the debug libs or use the official sdk libs for debugging.
