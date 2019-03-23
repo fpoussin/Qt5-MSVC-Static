@@ -1,4 +1,14 @@
-This is the changelog for jom 1.1.2, the parallel make tool.
+This is the changelog for jom 1.1.3, the parallel make tool.
+
+Changes since jom 1.1.2
+- Removed the /KEEPTEMPFILES option. This option only worked for top-level make
+  files anyway and was less useful than intended. Use the /U option to display
+  the content of inline files instead.
+- Fixed an issue where jom.exe would try to load qt.conf from drive E.
+- Fixed handling of double backslash at the end of line (QTCREATORBUG-20550).
+- Fixed handling of line continuations in preprocessor directives
+  (QTCREATORBUG-8621, QTCREATORBUG-18001).
+- Fixed the CMake project file.
 
 Changes since jom 1.1.1
 - Fixed exit code propagation in xgejom.bat and ibjom.bat (QTCREATORBUG-16619).
