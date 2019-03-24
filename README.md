@@ -1,6 +1,7 @@
 # **Qt5-MSVC-Static**
 
-Set of tools to build Qt5 static libs on Windows.
+Set of tools to build Qt5 static libs on Windows.  
+There are some binaries available [here](https://ci.appveyor.com/project/fpoussin/qt5-msvc-static/build/artifacts)
 
 ## Dependencies
 
