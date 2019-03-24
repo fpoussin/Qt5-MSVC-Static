@@ -10,7 +10,17 @@ Set of tools to build Qt5 static libs on Windows.
  - Perl (http://strawberryperl.com/) (for OpenSSL)
  - OpenSSL 1.0.x
 
-Make sure *Python*, *Perl* are all in the *PATH* or add them to *PATH* in options.bat
+Make sure *Python*, *Perl* are all in the *PATH* or add them to *PATH* in options.bat  
+
+**NTFS** case sensitivity needs to be turned **OFF** in the parent folder before cloning.  
+You can check with this command:  
+```
+fsutil file queryCaseSensitiveInfo .
+```
+If you need to disable it:
+```
+fsutil file setCaseSensitiveInfo . disable
+```
 
 You can check the official documentation here:  
 http://doc.qt.io/qt-5/windows-requirements.html  
