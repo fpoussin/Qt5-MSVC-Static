@@ -9,7 +9,7 @@ There are some binaries available [here](https://ci.appveyor.com/project/fpoussi
  - Qt 5.8.0+ sources (Works with previous version with minor edits)
  - Python 2.7 (https://www.python.org/downloads/windows/) (for Qt)
  - Perl (http://strawberryperl.com/) (for OpenSSL)
- - OpenSSL 1.0.x
+ - OpenSSL 1.0.x/1.1.x
 
 Make sure *Python*, *Perl* are all in the *PATH* or add them to *PATH* in options.bat  
 
