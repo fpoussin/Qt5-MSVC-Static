@@ -35,7 +35,6 @@ jobs:
     - name: Setup
       run: qt setup
 
-    -name: Build
-     run: qt build
-     
+    - name: Build
+      run: qt build
       
